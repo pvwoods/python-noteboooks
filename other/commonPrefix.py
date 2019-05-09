@@ -14,7 +14,7 @@ class Trie():
     def commonPrefix(self):
         
         cur = self
-        result = [self.value]
+        result = [self.value] if self.value else []
         while cur.hasOneChild and not cur.stopWord:
             result.append(cur.children.keys()[0])
             cur = cur.children[result[-1]]
@@ -43,5 +43,5 @@ class Solution(object):
         for word in strs:
             trie.addWord(word)
         
-        return "".join(trie.commonPrefix[1:])
+        return "".join(trie.commonPrefix)
         
