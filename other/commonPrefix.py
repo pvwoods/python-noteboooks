@@ -1,6 +1,6 @@
 class Trie():
     
-    def __init__(self, value):
+    def __init__(self, value=None):
         
         self.children = {}
         self.value = value
@@ -39,7 +39,7 @@ class Solution(object):
         :rtype: str
         """
         
-        trie = Trie(None)
+        trie = Trie()
         for word in strs:
             trie.addWord(word)
         
